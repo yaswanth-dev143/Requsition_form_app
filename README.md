@@ -114,7 +114,7 @@ Requisition_Form_App/
 ## Data Structure
 
 Forms are stored with the following structure:
-\`\`\`javascript
+```json
 {
   formNumber: number,
   date: string,
@@ -131,5 +131,5 @@ Forms are stored with the following structure:
   ],
   pdfUri: string
 }
-\`\`\`
+```
 
