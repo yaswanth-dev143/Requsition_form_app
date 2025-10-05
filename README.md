@@ -1,50 +1,135 @@
-# Welcome to your Expo app 👋
+# Requisition Form App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile application for managing and tracking requisition forms digitally. This app streamlines the process of creating, managing, and tracking requisition requests with features like PDF generation, form searching, and digital record keeping.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 📝 Create and edit requisition forms
+- 📱 User-friendly mobile interface
+- 🔍 Search and filter forms
+- 📄 PDF generation and sharing
+- 📊 Form history tracking
+- 💾 Offline data storage
+- 🔄 Recent forms quick access
+- 📱 Bottom navigation for easy access
 
+## Tech Stack
+
+- **Frontend Framework**: React Native with Expo
+- **State Management**: React Hooks (useState, useEffect)
+- **Storage**: AsyncStorage for local data persistence
+- **UI Components**: 
+  - React Native Paper
+  - Expo Vector Icons
+  - Custom components
+- **PDF Generation**: Expo Print
+- **File Sharing**: Expo Sharing
+- **Navigation**: Bottom Tab Navigation
+
+## Installation
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+- Expo CLI
+- Android Studio (for Android development)
+- Xcode (for iOS development, Mac only)
+
+### Installation Steps
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd Requisition_Form_App
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Start the development server:
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+4. Run on Android/iOS:
+   ```bash
+   # For Android
+   npm run android
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   # For iOS
+   npm run ios
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Installing the APK
 
-## Get a fresh project
+1. Download the APK from the latest release
+2. Enable "Install from Unknown Sources" in your Android settings
+3. Open the APK file to install
+4. Launch the app
 
-When you're ready, run:
+## Project Structure
 
-```bash
-npm run reset-project
-```
+\`\`\`
+Requisition_Form_App/
+├── assets/               # App icons and images
+├── components/          # React Native components
+│   ├── BottomNavBar.js  # Bottom navigation
+│   ├── FormEditor.js    # Form creation/editing
+│   ├── FormList.js      # List of forms
+│   ├── HomePage.js      # Home screen
+│   └── SearchBar.js     # Search functionality
+├── app/                 # App navigation and screens
+├── constants/          # App constants and theme
+├── scripts/           # Build and utility scripts
+├── App.js             # Main app component
+├── app.json          # Expo configuration
+├── package.json      # Dependencies and scripts
+└── eas.json         # EAS Build configuration
+\`\`\`
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Core Components
 
-## Learn more
+### FormEditor
+- Handles form creation and editing
+- Validates form inputs
+- Generates PDF documents
 
-To learn more about developing your project with Expo, look at the following resources:
+### FormList
+- Displays list of all forms
+- Supports sorting and filtering
+- Handles form deletion
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### SearchBar
+- Text-based search functionality
+- Date range filtering
+- Sort order selection
 
-## Join the community
+### BottomNavBar
+- Navigation between main sections
+- Home, Search, Create, and Recent views
 
-Join our community of developers creating universal apps.
+## Data Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Forms are stored with the following structure:
+\`\`\`javascript
+{
+  formNumber: number,
+  date: string,
+  requestedBy: string,
+  storeIncharge: string,
+  items: [
+    {
+      itemName: string,
+      quantity: string,
+      unit: string,
+      purpose: string,
+      remarks: string
+    }
+  ],
+  pdfUri: string
+}
+\`\`\`
+
