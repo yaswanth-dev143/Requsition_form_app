@@ -72,7 +72,7 @@ A mobile application for managing and tracking requisition forms digitally. This
 
 ## Project Structure
 
-\`\`\`
+```
 Requisition_Form_App/
 ├── assets/               # App icons and images
 ├── components/          # React Native components
@@ -88,7 +88,7 @@ Requisition_Form_App/
 ├── app.json          # Expo configuration
 ├── package.json      # Dependencies and scripts
 └── eas.json         # EAS Build configuration
-\`\`\`
+```
 
 ## Core Components
 
