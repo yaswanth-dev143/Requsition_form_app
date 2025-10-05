@@ -134,3 +134,13 @@ Forms are stored with the following structure:
 }
 ```
 
+## Android APK download
+
+### Website URL
+```
+https://expo.dev/accounts/yaswanth_999/projects/requisition-form-app/builds/b04e0624-b652-4c9d-b88d-71a8e11b1821
+```
+### QR Code
+<img width="377" height="427" alt="image" src="https://github.com/user-attachments/assets/f184732d-0c73-47a0-bc96-9185bf28b22d" />
+
+
